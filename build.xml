@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="gradebook" default="default" basedir=".">
+
+	<target name="init">
+		<mkdir dir="target" />
+		<mkdir dir="target/classes" />
+		<mkdir dir="target/reports" />
+
+		<path id="classpath">
+			<pathelement path="target/classes" />
+			<fileset dir="lib" includes="**/*.jar" />
+		</path>
+	</target>
+
+	<target name="compile" depends="init">
+		<javac srcdir="src/main/java" destdir="target/classes"
+			classpathref="classpath" source="1.7" target="1.7" includeantruntime="yes" />
+	</target>
+
+	<target name="compile-tests" depends="compile">
+		<javac srcdir="src/test/java" destdir="target/classes"
+			classpathref="classpath" source="1.7" target="1.7" includeantruntime="yes" />
+	</target>
+
+	<target name="test" depends="compile-tests">
+		<junit printsummary="yes" haltonfailure="no">
+			<classpath refid="classpath" />
+			<formatter type="plain" />
+			<batchtest fork="yes" todir="target/reports">
+				<fileset dir="src/test/java">
+					<include name="**/*Test.java" />
+				</fileset>
+			</batchtest>
+		</junit>
+	</target>
+
+	<taskdef resource="checkstyletask.properties" classpath="lib/checkstyle-5.6-all.jar" />
+
+	<target name="checkstyle" depends="init"
+		description="Generates a report of code convention violations.">
+		<checkstyle config="sun_checks.xml">
+			<classpath refid="classpath" />
+			<fileset dir="src/main/java" includes="**/*.java" />
+			<formatter type="plain" toFile="target/reports/checkstyle.txt" />
+		</checkstyle>
+	</target>
+
+</project>
