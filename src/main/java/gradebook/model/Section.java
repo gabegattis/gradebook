@@ -42,4 +42,8 @@ public class Section {
         return students.size();
     }
 
+    public GradingScheme getGradingScheme() {
+        return gradingScheme;
+    }
+
 }

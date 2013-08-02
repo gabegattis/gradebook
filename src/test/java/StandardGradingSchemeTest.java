@@ -1,14 +1,15 @@
 import static org.junit.Assert.*;
 import gradebook.model.CustomGradingScheme;
+import gradebook.model.StandardGradingScheme;
 
 import org.junit.Test;
 
 
-public class CustomGradingSchemeTest {
+public class StandardGradingSchemeTest {
 
     @Test
     public void test() {
-        CustomGradingScheme normal = new CustomGradingScheme(90,80,70,60);
+        StandardGradingScheme normal = new StandardGradingScheme();
         assertEquals('A', normal.calculateLetterGrade(95));
         assertEquals('B', normal.calculateLetterGrade(85));
         assertEquals('C', normal.calculateLetterGrade(75));

@@ -39,7 +39,7 @@ public class Class {
         return (Section) sections.get(index);
     }
 
-    public GradingScheme getGradingScheme(){
+    public GradingScheme getGradingScheme() {
         return gradingScheme;
     }
     public char getLetterGrade() {

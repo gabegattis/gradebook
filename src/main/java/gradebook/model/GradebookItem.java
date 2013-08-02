@@ -3,7 +3,7 @@ package gradebook.model;
 /**
 *  A single assignment for a particular student.
 */
-public class GradebookItem {
+public class GradebookItem implements Cloneable {
 
     private String name;
     private GradebookCategory gradebookCategory;
@@ -16,16 +16,24 @@ public class GradebookItem {
         grade = itemGrade;
     }
 
-    String getName() {
+    public String getName() {
         return name;
     }
 
-    GradebookCategory getGradebookCategory() {
+    public GradebookCategory getGradebookCategory() {
         return gradebookCategory;
     }
 
-    double getGrade() {
+    public double getGrade() {
         return grade;
+    }
+
+    public Object clone() {
+        try {
+            return super.clone();
+        } catch (Exception e) {
+            return null;
+        }
     }
 
 }
