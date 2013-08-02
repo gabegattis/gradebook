@@ -1,4 +1,15 @@
 Testsuite: anotherTest
-Tests run: 1, Failures: 0, Errors: 0, Time elapsed: 0.018 sec
+Tests run: 2, Failures: 1, Errors: 1, Time elapsed: 0.025 sec
 
-Testcase: testOne took 0.002 sec
+Testcase: courseSetup took 0.004 sec
+	FAILED
+expected:<[gradebook.model.Course@10b3611]> but was:<gradebook.model.Course@10b3611>
+junit.framework.AssertionFailedError: expected:<[gradebook.model.Course@10b3611]> but was:<gradebook.model.Course@10b3611>
+	at anotherTest.courseSetup(Unknown Source)
+
+Testcase: addRemoveClass took 0 sec
+	Caused an ERROR
+null
+java.lang.NullPointerException
+	at anotherTest.addRemoveClass(Unknown Source)
+

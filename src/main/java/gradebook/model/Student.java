@@ -46,4 +46,11 @@ public class Student {
         return gradeItems;
     }
 
+    public GradingScheme getGradingScheme() {
+        return gradingScheme;
+    }
+
+    public ScoreCalculator getScoreCalculator() {
+        return scoreCalculator;
+    }
 }

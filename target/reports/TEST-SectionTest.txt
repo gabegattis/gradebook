@@ -1,0 +1,5 @@
+Testsuite: SectionTest
+Tests run: 2, Failures: 0, Errors: 0, Time elapsed: 0.019 sec
+
+Testcase: addRemoveSection took 0.003 sec
+Testcase: classSetup took 0 sec

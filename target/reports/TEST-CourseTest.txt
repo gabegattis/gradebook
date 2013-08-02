@@ -1,0 +1,5 @@
+Testsuite: CourseTest
+Tests run: 2, Failures: 0, Errors: 0, Time elapsed: 0.028 sec
+
+Testcase: courseSetup took 0.003 sec
+Testcase: addRemoveClass took 0 sec
